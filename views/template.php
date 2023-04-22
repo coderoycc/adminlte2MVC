@@ -33,13 +33,11 @@
 <div class="wrapper">
 
   <!-- header -->
-
-  <!-- =============================================== -->
+  <?php include("./modules/header.php"); ?>
 
   <!-- ASIDE MENÚ -->
-  
+  <?php include("./modules/menu.php"); ?>
 
-  <!-- =============================================== -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -89,7 +87,8 @@
   <!-- /.content-wrapper -->
 
   <!-- Footer -->
-
+  <?php include("./modules/footer.php") ?>
+  
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Create the tabs -->
