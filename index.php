@@ -1,4 +1,5 @@
 <?php
-include("./controllers/templareController.php");
-include("./controll")
+include("./controllers/templateController.php");
+$plantilla = new TemplateController();
+$plantilla->ctrTemplate();
 ?>
