@@ -28,12 +28,11 @@
   <?php include("modules/header.php"); ?>
   <?php include("modules/menu.php"); ?>
 
-  <div class="content-wrapper">
+  <!-- CONTENT WRAPPER -->
     <?php 
       $ruta=$_SERVER['REQUEST_URI'];
       include('pages'.$ruta.".php");
     ?>
-  </div>
 
   <!-- Footer -->
   <?php include("./modules/footer.php") ?>
