@@ -29,13 +29,21 @@
   <?php include("modules/menu.php"); ?>
 
   <!-- CONTENT WRAPPER -->
+  <div class="content-wrapper" style="min-height: 717px">
     <?php 
       $ruta=$_SERVER['REQUEST_URI'];
-      include('pages'.$ruta.".php");
+      if($ruta == "/" || $ruta=="/index.php"){
+      }else if(file_exists(__DIR__.'/pages'.$ruta.'.php')){
+        // echo __DIR__.'/pages'.$ruta.'.php';
+        include('pages'.$ruta.".php");
+      }else{
+        // echo '<h2>RUTA: '.__DIR__.'pages'.$ruta.'.php</h2>';
+        include('pages/notFound.php');
+      }	
     ?>
-
+  </div>
   <!-- Footer -->
-  <?php include("./modules/footer.php") ?>
+  <?php include("views/modules/footer.php") ?>
   
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
