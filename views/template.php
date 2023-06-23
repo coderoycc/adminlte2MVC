@@ -32,12 +32,12 @@
   <div class="content-wrapper" style="min-height: 717px">
     <?php 
       $ruta=$_SERVER['REQUEST_URI'];
-      if($ruta == "/" || $ruta=="/index.php"){
+      // Carpeta en XAMPP
+      /*OBS en carpeta XAMPP no se encuentra la carpeta por el direccionamiento */
+      if($ruta == '/' || $ruta == "/index.php"){
       }else if(file_exists(__DIR__.'/pages'.$ruta.'.php')){
-        // echo __DIR__.'/pages'.$ruta.'.php';
         include('pages'.$ruta.".php");
       }else{
-        // echo '<h2>RUTA: '.__DIR__.'pages'.$ruta.'.php</h2>';
         include('pages/notFound.php');
       }	
     ?>
