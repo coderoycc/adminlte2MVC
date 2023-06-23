@@ -22,11 +22,34 @@
                   <tr>
                     <th style="width:10px">#</th>
                     <th>NOMBRE</th>
-                    <th>USUARIO</th>
+                    <th>CORREO</th>
                     <th>FOTO</th>
                     <th>ROL</th>
+                    <th>ACCIONES</th>
                   </tr>
                 </thead>
+                <tbody>
+                <?php
+                foreach ($users as $key => $value) {
+                ?>
+                  <tr>
+                    <td><?php echo $key+1; ?></td>
+                    <td><?php echo $value["nombre"]; ?></td>
+                    <td><?php echo $value["email"]; ?></td>
+                    <td><?php echo $value["foto"]; ?></td>
+                    <td><?php echo $value["rol"]; ?></td>
+                    <td>
+                      <div class="btn-group">
+                        <button class="btn btn-primary btn-xs btn-editar-perfil" data-toggle="modal" data-target="#modal-editar-usuario"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger btn-xs btn-eliminar-perfil"><i class="fa fa-trash"></i></button>
+                        <button class="btn btn-info btn-xs btn-ver-perfil"><i class="fa fa-eye"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                <?php
+                }
+                ?>
+                </tbody>
               </table>
             </div>
           </div>
