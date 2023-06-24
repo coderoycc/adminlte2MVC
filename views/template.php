@@ -3,7 +3,7 @@ $users = ctrUsers::ctrShowUsers();
 // var_dump($users);
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,6 +25,8 @@ $users = ctrUsers::ctrShowUsers();
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+  <script src="./views/js/sweetalert2.all.min.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->

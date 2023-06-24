@@ -40,9 +40,9 @@
                     <td><?php echo $value["rol"]; ?></td>
                     <td>
                       <div class="btn-group">
-                        <button class="btn btn-primary btn-xs btn-editar-perfil" data-toggle="modal" data-target="#modal-editar-usuario"><i class="fa fa-edit"></i></button>
-                        <button class="btn btn-danger btn-xs btn-eliminar-perfil"><i class="fa fa-trash"></i></button>
-                        <button class="btn btn-info btn-xs btn-ver-perfil"><i class="fa fa-eye"></i></button>
+                        <button class="btn btn-primary btn-lg btn-editar-perfil" data-toggle="modal" data-target="#modal-editar-usuario"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-danger btn-lg btn-eliminar-perfil"><i class="fa fa-trash"></i></button>
+                        <button class="btn btn-info btn-lg btn-ver-perfil"><i class="fa fa-eye"></i></button>
                       </div>
                     </td>
                   </tr>
@@ -68,29 +68,31 @@
         <h4 class="alert alert-success alert-dismissible">Agregar nuevo usuario</h4>
       </div>
       <div class="modal-body">
-        <form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data" id="form-user">
           <div class="form-group">
             <label for="nombre">Nombre:</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre" required>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
           </div>
           <div class="form-group">
-            <label for="usuario">Usuario:</label>
-            <input type="text" class="form-control" id="usuario" placeholder="Ingresa tu usuario" required>
+            <label for="usuario">Correo:</label>
+            <input type="text" class="form-control" id="usuario" name="email" placeholder="Ingresa tu usuario" required>
           </div>
           <div class="form-group">
             <label for="password">Contraseña:</label>
-            <input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña" required>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Ingresa tu contraseña" required>
           </div>
           <div class="form-group">
             <label for="imagen">Imagen:</label>
-            <input type="file" class="form-control-file" id="imagen" accept="image/*">
+            <input type="file" class="form-control-file" id="imagen" name="imagen" accept="image/*">
+            <img class="previewImg img-fuid py-2" width='200' height='200'>
+            <p class="help-block text-danger small">Tamaño recomendado: 200x200 | Peso de la imagen: 2MB</p>
           </div>
           <div class="form-group has-feedback">
             <label for="rol">ROL:</label>
-            <select name="rol" id="rol">
+            <select name="rol" id="rol" required>
               <option value="">Selecciona un rol</option>
-              <option value="Administrador">Administrador</option>
-              <option value="Usuario">Usuario</option>
+              <option value="1">Administrador</option>
+              <option value="2">Vendedor</option>
             </select>
           </div>
 
@@ -98,6 +100,11 @@
             <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Salir</button>
             <button type="submit" class="btn btn-primary">Guardar</button>
           </div>
+
+          <?php
+          $saveUser = new ctrUsers();
+          $saveUser->ctrAddUser();
+          ?>
         </form>
       </div>
     </div>
